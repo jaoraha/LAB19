@@ -1,0 +1,35 @@
+	1. SELECT * FROM customers;
+	
+	2.  SELECT DISTINCT Country FROM Customers; 
+	
+	3.  SELECT * FROM customers where SUBSTRING(customerID, 1, 2) = "BL";
+		a.  SELECT * FROM customers WHERE CustomerID LIKE 'BL%'
+		
+	4. SELECT * FROM Orders ORDER BY OrderID ASC LIMIT 100;
+	
+	5. SELECT * FROM Orders WHERE ShipPostalCode IN ('1010', '3012', '12209', '05023');
+	
+	6. SELECT * FROM orders WHERE ShipRegion IS NOT NULL;
+	
+	7. SELECT * FROM Customers ORDER BY Country, City ASC;
+	
+	8. INSERT INTO customers VALUES ('ABCDE', 'ABC Company', 'Adam', 'Manager', '123 Main St.', 'Toronto', 'CA', '90210', 'Canada', '123-123-1234', '123-123-1234', Null, Null); 
+
+	9. UPDATE orders SET ShipRegion = 'EuroZone' WHERE ShipCountry = 'France';  (safe mode problem)
+	
+	10. DELETE FROM `order details` WHERE Quantity=1; (safe mode problem)
+	
+	11. SELECT AVG(quantity), MAX(quantity), MIN(quantity) from `order details`;
+	
+	12. SELECT AVG(quantity), MAX(quantity), MIN(quantity) FROM `order details` GROUP BY orderid;
+	
+	13. SELECT customerid FROM orders WHERE orderid = 10290;
+
+	14. SELECT * FROM orders JOIN customers;
+	SELECT * FROM orders LEFT JOIN customers USING (customerid);
+	SELECT * FROM orders RIGHT JOIN customers USING (customerid);
+	
+	15. SELECT FirstName FROM employees WHERE reportsTo IS NULL;
+
+	16. SELECT FirstName FROM employees WHERE reportsTo = "2";
+
